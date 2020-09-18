@@ -1,6 +1,9 @@
 class SongsController < ApplicationController
   def index
-    @songs = Song.all
+    if @song.valid?
+       @songs = Song.all
+    else 
+      redirect_to
   end
 
   def show
